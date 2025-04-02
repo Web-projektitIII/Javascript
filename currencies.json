@@ -1,0 +1,373 @@
+[
+  {
+    "CurrencyCode":"DZD",
+    "CurrencyName":"Algerian Dinar",
+    "CountryCode":"DZ",
+    "CountryName":"Algeria",
+    "PhoneCode":213
+  },
+  {
+    "CurrencyCode":"AOA",
+    "CurrencyName":"Angolan Kwanza",
+    "CountryCode":"AO",
+    "CountryName":"Angola",
+    "PhoneCode":244
+  },
+  {
+    "CurrencyCode":"XOF",
+    "CurrencyName":"CFA Franc BCEAO",
+    "CountryCode":"BJ",
+    "CountryName":"Benin",
+    "PhoneCode":229
+  },
+  {
+    "CurrencyCode":"BWP",
+    "CurrencyName":"Botswana Pula",
+    "CountryCode":"BW",
+    "CountryName":"Botswana",
+    "PhoneCode":267
+  },
+  {
+    "CurrencyCode":"XOF",
+    "CurrencyName":"CFA Franc BCEAO",
+    "CountryCode":"BF",
+    "CountryName":"Burkina Faso",
+    "PhoneCode":226
+  },
+  {
+    "CurrencyCode":"BIF",
+    "CurrencyName":"Burundian Franc",
+    "CountryCode":"BI",
+    "CountryName":"Burundi",
+    "PhoneCode":257
+  },
+  {
+    "CurrencyCode":"XAF",
+    "CurrencyName":"CFA Franc BEAC",
+    "CountryCode":"CM",
+    "CountryName":"Cameroon",
+    "PhoneCode":237
+  },
+  {
+    "CurrencyCode":"CVE",
+    "CurrencyName":"Cape Verdean Escudo",
+    "CountryCode":"CV",
+    "CountryName":"Cape Verde",
+    "PhoneCode":238
+  },
+  {
+    "CurrencyCode":"XAF",
+    "CurrencyName":"CFA Franc BEAC",
+    "CountryCode":"CF",
+    "CountryName":"Central African Republic",
+    "PhoneCode":236
+  },
+  {
+    "CurrencyCode":"XAF",
+    "CurrencyName":"CFA Franc BEAC",
+    "CountryCode":"TD",
+    "CountryName":"Chad",
+    "PhoneCode":235
+  },
+  {
+    "CurrencyCode":"KMF",
+    "CurrencyName":"Comorian Franc",
+    "CountryCode":"KM",
+    "CountryName":"Comoros",
+    "PhoneCode":269
+  },
+  {
+    "CurrencyCode":"XAF",
+    "CurrencyName":"CFA Franc BEAC",
+    "CountryCode":"CG",
+    "CountryName":"Congo",
+    "PhoneCode":242
+  },
+  {
+    "CurrencyCode":"CDF",
+    "CurrencyName":"Congolese Franc",
+    "CountryCode":"CD",
+    "CountryName":"Congo, The Democratic Republic of the",
+    "PhoneCode":243
+  },
+  {
+    "CurrencyCode":"XOF",
+    "CurrencyName":"CFA Franc BCEAO",
+    "CountryCode":"CI",
+    "CountryName":"Cote D'Ivoire",
+    "PhoneCode":225
+  },
+  {
+    "CurrencyCode":"DJF",
+    "CurrencyName":"Djiboutian Franc",
+    "CountryCode":"DJ",
+    "CountryName":"Djibouti",
+    "PhoneCode":253
+  },
+  {
+    "CurrencyCode":"EGP",
+    "CurrencyName":"Egypt Pound",
+    "CountryCode":"EG",
+    "CountryName":"Egypt",
+    "PhoneCode":20
+  },
+  {
+    "CurrencyCode":"XAF",
+    "CurrencyName":"CFA Franc BEAC",
+    "CountryCode":"GQ",
+    "CountryName":"Equatorial Guinea",
+    "PhoneCode":240
+  },
+  {
+    "CurrencyCode":"ERN",
+    "CurrencyName":"Eritrean Nakfa",
+    "CountryCode":"ER",
+    "CountryName":"Eritrea",
+    "PhoneCode":291
+  },
+  {
+    "CurrencyCode":"ETB",
+    "CurrencyName":"Ethiopian Birr",
+    "CountryCode":"ET",
+    "CountryName":"Ethiopia",
+    "PhoneCode":251
+  },
+  {
+    "CurrencyCode":"XAF",
+    "CurrencyName":"CFA Franc BEAC",
+    "CountryCode":"GA",
+    "CountryName":"Gabon",
+    "PhoneCode":241
+  },
+  {
+    "CurrencyCode":"GMD",
+    "CurrencyName":"Gambian Dalasi",
+    "CountryCode":"GM",
+    "CountryName":"Gambia",
+    "PhoneCode":220
+  },
+  {
+    "CurrencyCode":"GHS",
+    "CurrencyName":"Ghanaian Cedi",
+    "CountryCode":"GH",
+    "CountryName":"Ghana",
+    "PhoneCode":233
+  },
+  {
+    "CurrencyCode":"GNF",
+    "CurrencyName":"Guinean Franc",
+    "CountryCode":"GN",
+    "CountryName":"Guinea",
+    "PhoneCode":224
+  },
+  {
+    "CurrencyCode":"XOF",
+    "CurrencyName":"CFA Franc BCEAO",
+    "CountryCode":"GW",
+    "CountryName":"Guinea-Bissau",
+    "PhoneCode":245
+  },
+  {
+    "CurrencyCode":"KES",
+    "CurrencyName":"Kenyan Shilling",
+    "CountryCode":"KE",
+    "CountryName":"Kenya",
+    "PhoneCode":254
+  },
+  {
+    "CurrencyCode":"LSL",
+    "CurrencyName":"Lesotho Loti",
+    "CountryCode":"LS",
+    "CountryName":"Lesotho",
+    "PhoneCode":266
+  },
+  {
+    "CurrencyCode":"LRD",
+    "CurrencyName":"Liberia Dollar",
+    "CountryCode":"LR",
+    "CountryName":"Liberia",
+    "PhoneCode":231
+  },
+  {
+    "CurrencyCode":"LYD",
+    "CurrencyName":"Libyan Dinar",
+    "CountryCode":"LY",
+    "CountryName":"Libyan Arab Jamahiriya",
+    "PhoneCode":218
+  },
+  {
+    "CurrencyCode":"MGA",
+    "CurrencyName":"Malagasy Ariary",
+    "CountryCode":"MG",
+    "CountryName":"Madagascar",
+    "PhoneCode":261
+  },
+  {
+    "CurrencyCode":"MWK",
+    "CurrencyName":"Malawian Kwacha",
+    "CountryCode":"MW",
+    "CountryName":"Malawi",
+    "PhoneCode":265
+  },
+  {
+    "CurrencyCode":"XOF",
+    "CurrencyName":"CFA Franc BCEAO",
+    "CountryCode":"ML",
+    "CountryName":"Mali",
+    "PhoneCode":223
+  },
+  {
+    "CurrencyCode":"MRO",
+    "CurrencyName":"Mauritanian Ouguiya (pre2018)",
+    "CountryCode":"MR",
+    "CountryName":"Mauritania",
+    "PhoneCode":222
+  },
+  {
+    "CurrencyCode":"MUR",
+    "CurrencyName":"Mauritius Rupee",
+    "CountryCode":"MU",
+    "CountryName":"Mauritius",
+    "PhoneCode":230
+  },
+  {
+    "CurrencyCode":"MAD",
+    "CurrencyName":"Moroccan Dirham",
+    "CountryCode":"MA",
+    "CountryName":"Morocco",
+    "PhoneCode":212
+  },
+  {
+    "CurrencyCode":"MZN",
+    "CurrencyName":"Mozambique Metical",
+    "CountryCode":"MZ",
+    "CountryName":"Mozambique",
+    "PhoneCode":258
+  },
+  {
+    "CurrencyCode":"NAD",
+    "CurrencyName":"Namibia Dollar",
+    "CountryCode":null,
+    "CountryName":"Namibia",
+    "PhoneCode":264
+  },
+  {
+    "CurrencyCode":"XOF",
+    "CurrencyName":"CFA Franc BCEAO",
+    "CountryCode":"NE",
+    "CountryName":"Niger",
+    "PhoneCode":227
+  },
+  {
+    "CurrencyCode":"NGN",
+    "CurrencyName":"Nigeria Naira",
+    "CountryCode":"NG",
+    "CountryName":"Nigeria",
+    "PhoneCode":234
+  },
+  {
+    "CurrencyCode":"RWF",
+    "CurrencyName":"Rwandan Franc",
+    "CountryCode":"RW",
+    "CountryName":"Rwanda",
+    "PhoneCode":250
+  },
+  {
+    "CurrencyCode":"XOF",
+    "CurrencyName":"CFA Franc BCEAO",
+    "CountryCode":"SN",
+    "CountryName":"Senegal",
+    "PhoneCode":221
+  },
+  {
+    "CurrencyCode":"SCR",
+    "CurrencyName":"Seychelles Rupee",
+    "CountryCode":"SC",
+    "CountryName":"Seychelles",
+    "PhoneCode":248
+  },
+  {
+    "CurrencyCode":"SLL",
+    "CurrencyName":"Sierra Leonean Leone",
+    "CountryCode":"SL",
+    "CountryName":"Sierra Leone",
+    "PhoneCode":232
+  },
+  {
+    "CurrencyCode":"SOS",
+    "CurrencyName":"Somalia Shilling",
+    "CountryCode":"SO",
+    "CountryName":"Somalia",
+    "PhoneCode":252
+  },
+  {
+    "CurrencyCode":"ZAR",
+    "CurrencyName":"South Africa Rand",
+    "CountryCode":"ZA",
+    "CountryName":"South Africa",
+    "PhoneCode":27
+  },
+  {
+    "CurrencyCode":"SDG",
+    "CurrencyName":"Sudanese Pound",
+    "CountryCode":"SD",
+    "CountryName":"Sudan",
+    "PhoneCode":249
+  },
+  {
+    "CurrencyCode":"SZL",
+    "CurrencyName":"Swazi Lilangeni",
+    "CountryCode":"SZ",
+    "CountryName":"Eswatini",
+    "PhoneCode":268
+  },
+  {
+    "CurrencyCode":"TZS",
+    "CurrencyName":"Tanzanian Shilling",
+    "CountryCode":"TZ",
+    "CountryName":"Tanzania, United Republic of",
+    "PhoneCode":255
+  },
+  {
+    "CurrencyCode":"XOF",
+    "CurrencyName":"CFA Franc BCEAO",
+    "CountryCode":"TG",
+    "CountryName":"Togo",
+    "PhoneCode":228
+  },
+  {
+    "CurrencyCode":"TND",
+    "CurrencyName":"Tunisian Dinar",
+    "CountryCode":"TN",
+    "CountryName":"Tunisia",
+    "PhoneCode":216
+  },
+  {
+    "CurrencyCode":"UGX",
+    "CurrencyName":"Ugandan Shilling",
+    "CountryCode":"UG",
+    "CountryName":"Uganda",
+    "PhoneCode":256
+  },
+  {
+    "CurrencyCode":"MAD",
+    "CurrencyName":"Moroccan Dirham",
+    "CountryCode":"EH",
+    "CountryName":"Western Sahara",
+    "PhoneCode":212
+  },
+  {
+    "CurrencyCode":"ZMK",
+    "CurrencyName":"Zambian Kwacha",
+    "CountryCode":"ZM",
+    "CountryName":"Zambia",
+    "PhoneCode":260
+  },
+  {
+    "CurrencyCode":"ZWL",
+    "CurrencyName":"Zimbabwean Dollar",
+    "CountryCode":"ZW",
+    "CountryName":"Zimbabwe",
+    "PhoneCode":263
+  }
+]
