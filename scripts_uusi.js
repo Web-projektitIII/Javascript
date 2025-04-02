@@ -12,6 +12,7 @@ taulukko.forEach((alkio,indeksi) => {console.log(alkio,indeksi);}) silmukoi taul
 taulukko.map((alkio,indeksi) => {return alkio * 2;}) palauttaa uuden taulukon, jossa on alkioita kaksi kertaa enemmän.
 taulukko.filter((alkio,indeksi) => {return alkio > 5;}) palauttaa uuden taulukon, jossa on vain ne alkiot, jotka ovat suurempia kuin 5.
 taulukko.reduce((summa,alkio) => {return summa + alkio;},0) palauttaa taulukon alkioiden summan.
+taulukko.find((alkio,indeksi) => {return alkio > 5;}) palauttaa ensimmäisen alkion, joka on suurempi kuin 5.
 
 Tehtävä: suodata pois ne symbolit valuuttasymbolit-json-objektista, joille 
 ei löydy valuuttakurssia valuuttakurssit-json-objektista.
@@ -53,6 +54,7 @@ let targetCurrency = 'USD';
 const baseCurrencyInit = baseCurrency;
 const targetCurrencyInit = targetCurrency;
 let rates = {};
+let countryCodes = {};
 let rate = 0;
 const valuuttasymbolitApi = `https://openexchangerates.org/api/currencies.json`;
 const valuuttakurssitApi = `https://v6.exchangerate-api.com/v6/${API_KEY}/latest/${baseCurrency}`;
@@ -66,7 +68,7 @@ console.log("getApiUrl,baseCurrency:",baseCurrency, 'api:',api);
 return api;
 }
 
-const suodataMaatunnukset = (json1,json2) => {
+const suodataValuuttatunnukset = (json1,json2) => {
 const filteredJson = Object.keys(json2)
     .reduce((obj, key) => {
         console.log("suodataMaatunnukset,key:",key);
@@ -76,12 +78,35 @@ const filteredJson = Object.keys(json2)
         //console.log("suodataMaatunnukset,obj:",obj);
         return obj;
     }, {});
-
-console.log("suodataMaatunnukset,filteredJson:",filteredJson);
+console.log("suodataValuuttatunnukset,filteredJson:",filteredJson);
 return filteredJson;
 }
 
-const haeMaatunnukset = () => {
+
+const suodataMaatunnukset = (maatunnukset,rates) => {
+    console.log("suodataMaatunnukset,maatunnukset:",maatunnukset,'rates:',rates);
+    const filteredJson = Object.keys(rates)
+        .reduce((obj, key) => {
+            console.log("suodataMaatunnukset,key:",key);
+            /* Poimitaan se maatunnus maatunnukset.json-objektista, jonka CurrencyCode on rates-objektin valuuttakurssi-ominaisuus. */
+            const matchingCountry = maatunnukset.find(maa => maa["CurrencyCode"] === key);
+            if (matchingCountry) {
+                obj[key] = matchingCountry["CountryCode"];
+                console.log(`Maatunnus: ${matchingCountry["CountryCode"]}`);
+              } else {
+                console.log(`Valuuttakoodia ${key} ei löytynyt maatunnukset-objektista.`);
+              }
+            //console.log("suodataMaatunnukset,obj:",obj);
+            return obj;
+        }, {});
+    //console.log("suodataMaatunnukset,filteredJson:",filteredJson);
+    return filteredJson;
+    }
+    
+
+
+
+const haeMaatunnukset = rates => {
     fetch('./maatunnukset.json')
     .then(response => {
         if (!response.ok) {
@@ -90,12 +115,11 @@ const haeMaatunnukset = () => {
         return response.json();
     })
     .then(data => {
-        console.log('haeMaatunnukset:',data);
+        console.log('haeMaatunnukset:',data,'rates:',rates);
         // Käsittele JSON-dataa
-        data.forEach(maa => {
-            console.log(`Valuutta: ${maa["CurrencyCode"]} ${maa["CurrencyName"]}, Maa: ${maa["CountryCode"]} ${maa["CountryName"]}, Puhelintunnus: ${maa["PhoneCode"]}`);
-        });
-    })
+        countryCodes = suodataMaatunnukset(data,rates);
+        console.log('haeMaatunnukset,countryCodes:',countryCodes);
+        })
     .catch(error => console.error('Virhe JSON-tiedoston latauksessa:', error));
 }
 
@@ -186,16 +210,27 @@ const lisaaValuuttasymbolit_org = (data,kentta,selectedCurrency) => {
     }
 }
 
-const lisaaValuuttasymbolit = (data,kentta,selectedCurrency) => {
+const lisaaValuuttasymbolit = (valuutat,maat,kentta,selectedCurrency) => {
     const select = document.querySelector('#' + kentta);
     console.log("lisaaValuuttasymbolit,dataEntries:",Object.entries(data));
-    for (let [currency,header] of Object.entries(data)) {
-        const option = document.createElement('option');
-        option.value = currency;
+    for (let [currency,header] of Object.entries(valuutat)) {
+        const option = document.createElement('div');
+        /*<div class="option"><img src="stadinao.jfif" alt="EU" width="18" height="18" data-EUR>EUR (Euro)</div>*/
+        option.className = "option";
+        const countryCode = maat[currency];
+        console.log("lisaaValuuttasymbolit,currency:",currency,'header:',header,'countryCode:',countryCode);
+        const img = document.createElement('img');
+        img.src = `https://flagcdn.com/w40/${countryCode.toLowerCase()}.png`;
+        img.alt = currency;
+        img.width = 18;
+        img.height = 18;
+        img.className = 'flag';
+        option.appendChild(img);
+        option.dataset[currency] = currency;
         option.innerHTML = `${currency} (${header})`;
         if (currency === selectedCurrency) {
-            option.selected = true;
-        }
+            option.classList.add("selected");
+            }
         select.appendChild(option);
     }
 }
@@ -214,8 +249,11 @@ const haeValuuttakurssit = () => {
         //lisaaValuuttasymbolit(data,"lahtovaluutta",baseCurrency);
         //lisaaValuuttasymbolit(data,"kohdevaluutta",targetCurrency);
         rates = data.conversion_rates;
+        console.log("haeValuuttakurssit,rates:",rates);
         rate = data.conversion_rates[targetCurrency];
         haeValuuttaSymbolit(rates);
+        haeMaatunnukset(rates);
+        console.log("haeValuuttakurssit,maatunnukset:",countryCodes);
         naytaValuuttakurssi();
         })
     .catch(error => {
@@ -236,11 +274,12 @@ const haeValuuttaSymbolit = rates => {
     .then(data => {
         /* Suodatetaan pois ne symbolit, joille löydy valuuttakurssia. */
         //console.log("haeValuuttasymbolit,data:",data);
-        const dataFiltered = suodataMaatunnukset(data,rates);
+        const dataFiltered = suodataValuuttatunnukset(data,rates);
+        //const countryFiltered = suodataMaatunnukset(countryCodes,rates);
         console.log("haeValuuttasymbolit,rates:",rates);
         console.log("haeValuuttasymbolit,data suodatettuna:",dataFiltered);
-        lisaaValuuttasymbolit(dataFiltered,"lahtovaluutta",baseCurrency);
-        lisaaValuuttasymbolit(dataFiltered,"kohdevaluutta",targetCurrency);
+        lisaaValuuttasymbolit(dataFiltered,countryCodes,"lahtovaluutta",baseCurrency);
+        lisaaValuuttasymbolit(dataFiltered,countryCodes,"kohdevaluutta",targetCurrency);
         })
     .catch(error => console.log(error));
 }
