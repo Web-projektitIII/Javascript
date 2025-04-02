@@ -1,0 +1,16 @@
+[
+    {
+      "ExchangeRates": [
+        {
+          "ObservationDate": "2025-03-14",
+          "Value": "1.0889"
+        }
+      ],
+      "Currency": "USD",
+      "CurrencyDenom": "EUR",
+      "CurrencyNameFi": "Yhdysvaltain dollari",
+      "CurrencyNameSe": "US-dollar",
+      "CurrencyNameEn": "US dollar",
+      "ECBPublished": "true"
+    }
+  ]

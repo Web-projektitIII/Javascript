@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Arrays</h1>
+<h2>The forEach() Method</h2>
+
+<p>Call a function once for each array element:</p>
+
+<p id="demo"></p>
+
+<script>
+let txt = "";
+let x = 0.1;
+
+const numbers = [45, 4, 9, 16, 25];
+const myFunction = value => txt += value + "<br>"; 
+
+numbers.forEach(myFunction);
+document.getElementById("demo").innerHTML = txt;
+
+const numbers2 = numbers.map(myFunction);
+document.getElementById("demo").innerHTML = txt;
+console.log("numbers2:",numbers2);
+
+const q1 = ["Jan", "Feb", "Mar"];
+const q2 = ["Apr", "May", "Jun"];
+const q3 = ["Jul", "Aug", "Sep"];
+const q4 = ["Oct", "Nov", "Des"];
+
+const year = [...q1, ...q2, ...q3, ...q4];
+document.getElementById("demo").innerHTML = year; 
+console.log("year:",year);
+
+const arr1 = ["Cecilie", "Lone"];
+const arr2 = ["Emil", "Tobias", "Linus"];
+const arr3 = ["Robin", "Morgan"];
+
+const children = arr1.concat(arr2,arr3); 
+document.getElementById("demo").innerHTML = children;
+console.log("children:",children);
+
+// Create an Object:
+const person = {
+  firstName: "John",
+  lastName : "Doe",
+  id     :  5566
+};
+
+let ominaisuus = 'lastName';
+// Display lastName from the Object:
+document.getElementById("demo").innerHTML =
+"The last name is " + person[ominaisuus];
+
+for (x in person) {
+  txt += person[x] + " ";
+}
+
+
+console.log("type of person:",typeof(person));
+console.log("type of year:",typeof(year));
+console.log("type of txt:",typeof(txt));
+console.log("type of x:",typeof(x));
+
+document.getElementById("demo").innerHTML = txt;
+
+
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div id="root">  
+<p id="alku"></p>      
+<h1>JavaScript HTML Events</h1>
+<h2>The onclick Attribute</h2>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+button = document.querySelector('button')
+button.addEventListener('mouseover',hover)
+button.addEventListener('mouseout',hoverout)
+document.querySelector('#alku').innerHTML = "Terve maailma!"
+});
+
+function hover(event) {
+event.target.style.color = 'red';
+}
+
+function hoverout(event) {
+event.target.style.color = 'black';
+}
+
+
+function muutaHTML(p) {
+p.innerHTML = Date()
+}
+
+function listaus() {
+pElementit = document.querySelectorAll('p');
+console.log(pElementit)
+pElementit.forEach(muutaHTML)
+}
+</script>
+
+<button onclick="listaus();">The time is?</button>
+
+<p>Tämä on ensimmäinen p-elementti</p>
+<p id="demo">Tämä on demo-elementti</p>
+
+</div>
+</body>
+</html>
+

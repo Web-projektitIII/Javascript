@@ -1,0 +1,326 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Sigmar&display=swap');
+
+* { 
+    box-sizing: border-box;
+    font-family: 'Roboto',sans-serif; 
+    font-size: 1rem;
+}
+
+html, body { 
+    height: 100%;
+}
+
+
+#root {
+    margin-top: 20px;
+    /*background-color: yellow;
+    height: 100%;
+    */
+}
+
+
+nav { 
+    background-color: #333;
+    padding: 0 10px; 
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+}
+
+nav a { 
+    color: #fff; 
+    text-decoration: none;
+}
+
+nav a:hover {  
+    background-color: #ddd;
+    color: black;
+}
+
+nav a:active {
+    background-color: #04AA6D;
+    color: white;
+}
+
+nav a:not(:first-child) { 
+    padding: 0px 4px;
+}
+
+.oikealle { 
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+nav a:not(:first-child, :last-child) { 
+    display: none;
+}
+
+nav.responsive a:not(:first-child, :last-child) { 
+    display: block;
+}
+
+.icon {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.logo {margin-right:20px;}
+
+footer {
+  position: sticky;
+  top: 100vh;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  margin-top: 40px;
+  min-width: fit-content;
+}
+
+footer > div {
+    display: flex;
+    flex-direction: column;
+    /*justify-content: space-between;*/
+    /*gap: 40px; */ 
+    /*width: fit-content; */
+    padding: 20px;
+
+}
+
+footer a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    text-align: left;
+    margin-bottom: 4px;
+}
+
+footer p {
+    margin: 0;
+    padding: 10px;
+    background-color: black;
+}
+
+footer i {
+    margin-right: 4px;
+    font-size:18px;
+}
+
+.logo-footer {
+margin-right: auto;
+}
+
+.contact-footer, .social-footer {
+    text-align: left;
+    white-space: nowrap;
+}
+
+
+h1 { color: #f00; }
+
+.lomake-div {
+    max-width: fit-content;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+}
+
+
+form {
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    width: fit-content;
+    min-width: 380px;
+}
+
+legend {
+    padding: 0 10px 5px 10px;
+    color: #aaa;
+}
+
+input,textarea {
+    padding: 4px;
+    font-size: 1rem;
+}
+
+label {
+    width: 125px;
+    color: navy;
+    padding-top: 4px;
+    white-space: nowrap;
+}
+
+.label-kapea {
+    width: 75px;
+    color: navy;
+    padding-top: 4px;
+    white-space: nowrap;
+}
+
+.input-div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4px;
+}
+
+
+.checkbox-div {
+    display: flex;
+    margin-bottom: 4px;
+}
+
+
+.button-div {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    padding-right: 50px;
+    margin-top:10px;
+}
+
+
+.link-div {
+ padding: 20px;
+}
+
+.link-div span {
+    white-space: nowrap;
+}
+
+.link-div a {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+#building-div {
+    width: 200px;
+    height: 200px;
+    border:1px solid #ccc;
+}
+
+#building {
+    width: 100%;
+    height: 100%;
+    /* Täytä kuva kokonaan ja keskitä. */
+    object-fit: cover;
+    object-position: center;
+}
+
+.etunimi,.sukunimi {
+    width: 300px;
+}
+
+.email,.katuosoite {
+    width: 100%;
+}
+
+.maatunnus {
+    padding: 4px;
+}
+
+.matkapuhelin {
+    width: 140px;
+}
+
+.postinumero {
+    width: 100px;
+}
+
+.kaupunki {
+    width: 200px;
+}
+
+.syntymaaika {
+    width: 200px;
+}
+
+.salasana {
+    width: 200px;
+}
+
+.viesti {    
+    width: 100%;
+}
+
+.api-ref {
+ padding: 4px;
+ font-size: 0.8rem;
+ color: #ccc;
+}
+
+#details {
+    display: none;
+    scroll-margin-top: 100vh; /* Ei peitä otsikkoa. */
+}
+
+#details:target {
+    display: block;
+    margin-bottom: 20px;
+}
+
+#details span {
+    margin-right: 10px;
+}
+/* Media queryt Bootstrapin katkaisukohdilla
+<576px	xs
+≥576px	sm
+≥768px	md
+≥992px	lg
+≥1200px	xl
+>1400px xxl
+*/
+
+@media (min-width: 576px) {
+    nav {
+        flex-direction: row;
+        align-items: center;
+        padding-bottom: 0px;
+    }
+
+    nav a:not(:first-child, :last-child) { 
+        display: block;
+    }
+
+    .icon {
+        display: none;
+    }
+
+    footer > div {
+        flex-direction: row;
+        gap: 40px;
+    }
+
+    .lomake-div {
+        flex-direction: row;
+        gap: 20px;
+
+        }
+
+    .input-div {
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .input-div span {
+        padding: 4px;
+    }
+
+    .checkbox-div {
+        gap: 10px;
+    }
+
+    .email,.katuosoite {
+        width: 400px;
+    }
+    .viesti {    
+        width: 70%;
+    }
+
+}

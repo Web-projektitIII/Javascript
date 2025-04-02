@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML-kurssin aloitus</title>
+        <meta charset="utf-8">
+        <!-- Tässä määritään responsiivisuutta, mm. fonttikooksi 16px -->
+        <meta viewport="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="site.css">
+        <link rel="icon" href="favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <script defer src="scripts.js"></script>
+    </head>
+    <body>
+        <nav>
+            <a class="logo" href="index.html">    
+            <img src="stadinao.jfif" alt="Logo" width="40" height="40">
+            </a>
+            <a href="index.html">Etusivu</a>
+            <a class="oikealle" href="kirjautuminen.html">Kirjaudu</a>
+            <a href="javascript:void(0);" class="icon" onclick="menuToggle()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </nav>     
+<div id="root">
+    <p id="alku"></p>      
+    <h1>JavaScript HTML Events</h1>
+    <h2>The onclick Attribute</h2>
+    <button>Count</button>
+    
+    <script>
+        var varMuuttuja = 'Var: Document is loading' 
+        let letMuuttuja = 'Let: Document is loading'
+        const pi = 3.14;
+        console.log("varMuuttuja: ",varMuuttuja)
+        console.log("letMuuttuja: ",letMuuttuja)
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+        let button = document.querySelector('button')
+        button.addEventListener('mouseover',hover)
+        button.addEventListener('mouseout',hoverout)
+        document.querySelector('#alku').innerHTML = "Terve maailma!"
+        document.querySelectorAll('button').forEach(button => {
+            button.onclick = () => document.querySelector("#hello").style.color = button.dataset.color;
+            });
+
+
+        // Select the submit button and input to be used later
+        const submit = document.querySelector('#submit');
+        const newTask = document.querySelector('#task');
+
+        // Disable submit button by default:
+        submit.disabled = true;
+
+        // Listen for input to be typed into the input field
+        newTask.onkeyup = () => {
+            if (newTask.value.length > 0) {
+                submit.disabled = false;
+            }
+            else {
+                submit.disabled = true;
+            }
+        }
+
+        // Listen for submission of form
+        document.querySelector('form').onsubmit = event => {
+            event.preventDefault();
+            // Find the task the user just submitted
+            const task = newTask.value;
+            // Create a list item for the new task and add the task to it
+            const li = document.createElement('li');
+            li.innerHTML = task;
+            // Add new element to our unordered list:
+            document.querySelector('#tasks').append(li);
+            // Clear out input field:
+            newTask.value = '';
+            // Disable the submit button again:
+            submit.disabled = true;
+            // Stop form from submitting
+            //return false;
+        }
+    });
+    
+    const hover = event => {
+        console.log("varMuuttuja: ",varMuuttuja)
+        console.log("letMuuttuja: ",letMuuttuja)
+        console.log("pi: ",pi)
+        varMuuttuja = 'Var: Hover event'
+        letMuuttuja = 'Let: Hover event'
+        event.target.style.color = 'red';
+        }
+    
+    const hoverout = event => {
+        event.target.style.color = 'black';
+        console.log("hoverout,varMuuttuja: ",varMuuttuja)
+        console.log("hoverout,letMuuttuja: ",letMuuttuja)
+        }
+    
+    
+    function muutaHTML(p) {
+    p.innerHTML = Date()
+    }
+    
+    
+    const listaus = () => {
+        pElementit = document.querySelectorAll('p');
+        console.log(pElementit)
+        pElementit.forEach(p => p.innerHTML = Date())
+        /*pElementit.forEach(function(p) {p.innerHTML = Date() });*/
+        }
+
+    </script>
+    
+    <button onclick="listaus();">The time is?</button>
+    
+    <p>Tämä on ensimmäinen p-elementti</p>
+    <p id="demo">Tämä on demo-elementti</p>
+    <h1 id="hello">Hello</h1>
+    <button data-color="red">Red</button>
+    <button data-color="blue">Blue</button>
+    <button data-color="green">Green</button>
+    <h1>Tasks</h1>
+    <ul id="tasks"></ul>
+    <form>
+        <input id="task" placeholder = "New Task" type="text">
+        <input id="submit" type="submit">
+    </form>
+</div>
+<footer>
+    <div>
+    <a class="logo-footer" href="index.html">    
+    <img src="stadinao.jfif" alt="Logo" width="100" height="100">
+    </a>
+    <div class="contact-footer">
+    <h3>Yhteystiedot</h3>
+    <!-- Email link -->
+    <a href="mailto:asiakaspalvelu@omayritys.fi">
+        <i class="fas fa-envelope"></i>
+        asiakaspalvelu@omayritys.fi
+    </a>
+    <!-- Phone call link -->
+    <a href="tel:+3585012345678">
+        <i class="fas fa-phone"></i>
+        +3585012345678
+    </a>
+    <!-- SMS link -->
+    <a href="sms:+3585012345678">
+        <i class="fas fa-sms"></i>
+        +3585012345678
+    </a>
+    </div>
+    <div class="social-footer">
+    <h3>Seuraa meitä sosiaalisessa mediassa</h3>
+    <!-- Facebook link -->
+    <a href="https://www.facebook.com/omayritys">
+        <i class="fab fa-facebook" style="font-size:18px;"></i>
+        Facebook
+    </a>
+    <!-- Twitter link -->
+    <a href="https://www.twitter.com/omayritys">
+        <i class="fab fa-twitter" style="font-size:18px;"></i>
+        Twitter
+    </a>
+    <!-- Instagram link -->
+    <a href="https://www.instagram.com/omayritys">
+        <i class="fab fa-instagram" style="font-size:18px;"></i>
+        Instagram
+    </a>
+    </div>
+    </div>        
+    <p>&copy; 2025 Ohjelmointikurssi</p>
+</footer>
+</body>
+</html>
