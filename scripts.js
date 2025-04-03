@@ -17,8 +17,10 @@ taulukko.find((alkio,indeksi) => {return alkio > 5;}) palauttaa ensimmäisen alk
 Tehtävä: suodata pois ne symbolit valuuttasymbolit-json-objektista, joille 
 ei löydy valuuttakurssia valuuttakurssit-json-objektista.
 
-Maiden lippuja: flagcdn.com, `flagsapi.com/w40/${countrycode}.png` tai
-https://flagsapi.com/countrycode/flat/32.png
+Maiden lippuja: 
+`https://flagcdn.com/w40/countrycode.png`, 
+`https://flagsapi.com/w40/${COUNTRYCODE}.png` tai
+`https://flagsapi.com/COUNTRYCODE/flat/32.png`
 Maiden maa-, valuutta- ja puhelinverkkotunnukset : https://docs.nium.com/docs/currency-and-country-codes
 */  
 

@@ -1,0 +1,102 @@
+.currency-select {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    font-family: Arial, sans-serif;
+    user-select: none;
+}
+.selected-option {
+    border: 1px solid #ccc;
+    padding: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.selected-option img {
+    width: 24px;
+    height: 18px;
+    margin-right: 10px;
+}
+.options {
+    position: absolute;
+    top: 105%;
+    left: 0;
+    right: 0;
+    border: 1px solid #ccc;
+    background: white;
+    border-radius: 8px;
+    display: none;
+    z-index: 10;
+    max-height: 200px; /* scroll rajoitin */
+    overflow-y: auto;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.option {
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.option img {
+    width: 24px;
+    height: 18px;
+    margin-right: 10px;
+}
+.option:hover {
+    background: #f5f5f5;
+}
+@media (hover: none) {
+    .option:hover {
+        background: #ffffff;
+    }
+    .option:active {
+        background: #f0f0f0;
+    }
+}
+</style>
+<div class="currency-select" id="currencySelect">
+    <div class="selected-option" id="selectedOption">
+        <img src="flags/us.png" alt="US">
+        <span>USD - US Dollar</span>
+    </div>
+    <div class="options" id="optionsList">
+        <div class="option" data-value="USD">
+            <img src="flags/us.png" alt="US">
+            <span>USD - US Dollar</span>
+        </div>
+        <div class="option" data-value="EUR">
+            <img src="flags/eu.png" alt="EU">
+            <span>EUR - Euro</span>
+        </div>
+        <div class="option" data-value="JPY">
+            <img src="flags/jp.png" alt="JP">
+            <span>JPY - Japanese Yen</span>
+        </div>
+        <!-- Lisää tarvittaessa -->
+    </div>
+</div>
+<script>
+const selectedOption = document.getElementById('selectedOption');
+const optionsList = document.getElementById('optionsList');
+selectedOption.addEventListener('click', () => {
+    optionsList.style.display = optionsList.style.display === 'block' ? 'none' : 'block';
+});
+document.querySelectorAll('.option').forEach(option => {
+    option.addEventListener('click', () => {
+        selectedOption.innerHTML = option.innerHTML;
+        optionsList.style.display = 'none';
+        console.log('Valittu valuutta:', option.dataset.value);
+    });
+});
+// Sulje klikattaessa ulkopuolelle
+window.addEventListener('click', e => {
+    if (!document.getElementById('currencySelect').contains(e.target)) {
+        optionsList.style.display = 'none';
+    }
+});
+</script>
